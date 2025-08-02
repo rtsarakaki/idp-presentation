@@ -38,18 +38,15 @@ export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="space-y-4"
             >
-              <div className="flex items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                <p className="text-xl">Transformando a experiência de desenvolvimento</p>
-              </div>
-              <div className="flex items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
-                <p className="text-xl">Acelerando a entrega de valor</p>
-              </div>
-              <div className="flex items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <p className="text-xl">Reduzindo fricção e aumentando produtividade</p>
-              </div>
+              {slide.content.map((item, index) => {
+                const colors = ['bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-yellow-400'];
+                return (
+                  <div key={index} className="flex items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+                    <div className={`w-3 h-3 ${colors[index]} rounded-full`}></div>
+                    <p className="text-xl">{item}</p>
+                  </div>
+                );
+              })}
             </motion.div>
           </div>
 

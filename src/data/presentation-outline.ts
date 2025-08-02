@@ -21,13 +21,13 @@ export const presentationOutline: IPresentationOutline = {
   slides: [
     {
       id: "intro",
-      title: "Internal Developer Platform",
-      subtitle: "Transformando a Engenharia de Software",
+      title: "Internal Developer Platform (IDP)",
+      subtitle: "Estratégia para Times de Engenharia",
       content: [
-        "Contexto e Desafios Atuais",
+        "A Jornada dos Times de Engenharia",
         "O que é IDP e seus Princípios",
         "Benefícios: Aceleração, Observabilidade e Governança",
-        "Abordagem de Implementação e Próximos Passos"
+        "Desafios de Adoção"
       ],
       duration: 3,
       type: "intro"
@@ -48,13 +48,14 @@ export const presentationOutline: IPresentationOutline = {
     },
     {
       id: "context",
-      title: "O Contexto Atual",
-      subtitle: "Desafios da Engenharia de Software Moderna",
+      title: "A Jornada dos Times de Engenharia",
+      subtitle: "Como Trabalhávamos Antes",
       content: [
-        "Times distribuídos e multidisciplinares",
-        "Pressão por velocidade de entrega",
-        "Complexidade crescente da infraestrutura",
-        "Necessidade de governança e controle"
+        "Processos manuais e burocráticos",
+        "Configuração de ambiente levava dias",
+        "Cada time tinha sua própria forma de fazer",
+        "Falta de padronização e visibilidade",
+        "Desenvolvedores perdiam tempo com infraestrutura"
       ],
       duration: 5,
       type: "problem"
@@ -158,16 +159,16 @@ export const presentationOutline: IPresentationOutline = {
     },
     {
       id: "closing",
-      title: "Próximos Passos",
-      subtitle: "Transformando a Engenharia",
+      title: "Desafios de Adoção",
+      subtitle: "Lições Aprendidas",
       content: [
-        "Identificar oportunidades de melhoria",
-        "Formar comitê de adoção",
-        "Definir roadmap de implementação",
-        "Começar com um piloto",
-        "Medir resultados e expandir"
+        "Resistência à mudança de processos",
+        "Curva de aprendizado inicial",
+        "Necessidade de evangelização contínua",
+        "Importância do suporte executivo",
+        "Medição e demonstração de valor"
       ],
-      duration: 3,
+      duration: 5,
       type: "closing"
     }
   ]
