@@ -39,7 +39,7 @@ export const presentationOutline: IPresentationOutline = {
       content: [
         "Profissional de tecnologia com mais de 25 anos de experiência",
         "Atuei em diversos papéis: desenvolvimento, arquitetura, liderança",
-        "Foco em plataformas de engenharia, SRE e observabilidade",
+        "Experiência em desenvolvimento de software, arquitetura de soluções, plataforma de engenharia e SRE",
         "Vivi múltiplas transformações digitais ao longo da jornada",
         "Apaixonado por tecnologia, inovação e desenvolvimento de pessoas"
       ],
