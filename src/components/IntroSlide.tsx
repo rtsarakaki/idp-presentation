@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { IPresentationSlide } from '@/data/presentation-outline';
 
@@ -10,6 +10,20 @@ interface IIntroSlideProps {
 }
 
 export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (isActive) {
+      // Pequeno delay para garantir que o componente está montado
+      const timer = setTimeout(() => {
+        setShouldAnimate(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      setShouldAnimate(false);
+    }
+  }, [isActive]);
+
   if (!isActive) return null;
 
   return (
@@ -69,12 +83,12 @@ export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
 
                 {/* Órbita 1 - Desenvolvedores */}
                 <motion.div
-                  animate={{ rotate: 360 }}
+                  animate={shouldAnimate ? { rotate: 360 } : { rotate: 0 }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64"
                 >
                   <motion.div 
-                    animate={{ rotate: -360 }}
+                    animate={shouldAnimate ? { rotate: -360 } : { rotate: 0 }}
                     transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                     className="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full flex items-center justify-center text-white text-sm font-semibold"
                     style={{ 
@@ -89,12 +103,12 @@ export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
 
                 {/* Órbita 2 - DevOps */}
                 <motion.div
-                  animate={{ rotate: -360 }}
+                  animate={shouldAnimate ? { rotate: -360 } : { rotate: 0 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96"
                 >
                   <motion.div 
-                    animate={{ rotate: 360 }}
+                    animate={shouldAnimate ? { rotate: 360 } : { rotate: 0 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     className="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full flex items-center justify-center text-white text-sm font-semibold"
                     style={{ 
@@ -109,12 +123,12 @@ export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
 
                 {/* Órbita 3 - SRE */}
                 <motion.div
-                  animate={{ rotate: 360 }}
+                  animate={shouldAnimate ? { rotate: 360 } : { rotate: 0 }}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128"
                 >
                   <motion.div 
-                    animate={{ rotate: -360 }}
+                    animate={shouldAnimate ? { rotate: -360 } : { rotate: 0 }}
                     transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                     className="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full flex items-center justify-center text-white text-sm font-semibold"
                     style={{ 
@@ -129,12 +143,12 @@ export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
 
                 {/* Órbita 4 - Arquitetura */}
                 <motion.div
-                  animate={{ rotate: -360 }}
+                  animate={shouldAnimate ? { rotate: -360 } : { rotate: 0 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-160 h-160"
                 >
                   <motion.div 
-                    animate={{ rotate: 360 }}
+                    animate={shouldAnimate ? { rotate: 360 } : { rotate: 0 }}
                     transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                     className="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-full flex items-center justify-center text-white text-sm font-semibold"
                     style={{ 
