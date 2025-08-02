@@ -65,11 +65,11 @@ export const presentationOutline: IPresentationOutline = {
       title: "Os Problemas que Enfrentamos",
       subtitle: "Fricções no Desenvolvimento",
       content: [
-        "40-60% do tempo dos devs em tarefas não-código",
+        "Tempo significativo perdido em tarefas não-código",
         "Processos burocráticos e aprovações manuais",
         "Inconsistência entre projetos e times",
-        "Falta de visibilidade sobre custos e performance",
-        "Onboarding lento de novos desenvolvedores"
+        "Visibilidade limitada sobre custos e performance",
+        "Onboarding demorado de novos desenvolvedores"
       ],
       duration: 8,
       type: "problem"

@@ -6,6 +6,8 @@ import { presentationOutline } from '@/data/presentation-outline';
 import PresentationSlide from './PresentationSlide';
 import PersonalSlide from './PersonalSlide';
 import IntroSlide from './IntroSlide';
+import ContextSlide from './ContextSlide';
+import PainPointsSlide from './PainPointsSlide';
 import SlideTransition from './SlideTransition';
 
 export default function Presentation() {
@@ -28,21 +30,25 @@ export default function Presentation() {
     const handleKeyPress = (event: KeyboardEvent) => {
       console.log('Key pressed:', event.key);
       if (event.key === 'ArrowRight' || event.key === ' ') {
-        handleNext();
+        if (currentSlideIndex < slides.length - 1) {
+          setCurrentSlideIndex(prev => prev + 1);
+        }
       } else if (event.key === 'ArrowLeft') {
-        handlePrevious();
+        if (currentSlideIndex > 0) {
+          setCurrentSlideIndex(prev => prev - 1);
+        }
       }
     };
 
     document.addEventListener('keydown', handleKeyPress);
     return () => document.removeEventListener('keydown', handleKeyPress);
-  }, []);
+  }, [currentSlideIndex, slides.length]);
 
   const currentSlide = slides[currentSlideIndex];
   const progress = ((currentSlideIndex + 1) / slides.length) * 100;
 
   return (
-    <div className="relative h-screen bg-slate-900 overflow-hidden" tabIndex={0}>
+    <div className="relative h-screen bg-slate-900 overflow-y-auto custom-scrollbar" tabIndex={0}>
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
         <motion.div
@@ -54,12 +60,12 @@ export default function Presentation() {
       </div>
 
       {/* Slide Counter */}
-      <div className="fixed top-4 right-4 text-white text-sm z-50">
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 text-white text-sm z-50">
         {currentSlideIndex + 1} / {slides.length}
       </div>
 
       {/* Navigation Controls */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+      <div className="fixed top-4 left-4 z-50">
         <button
           onClick={handlePrevious}
           disabled={currentSlideIndex === 0}
@@ -67,6 +73,8 @@ export default function Presentation() {
         >
           ← Anterior
         </button>
+      </div>
+      <div className="fixed top-4 right-4 z-50">
         <button
           onClick={handleNext}
           disabled={currentSlideIndex === slides.length - 1}
@@ -85,6 +93,16 @@ export default function Presentation() {
           />
         ) : currentSlide.id === 'presentation' ? (
           <PersonalSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'context' ? (
+          <ContextSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'pain-points' ? (
+          <PainPointsSlide
             slide={currentSlide}
             isActive={true}
           />

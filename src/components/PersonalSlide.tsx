@@ -13,7 +13,7 @@ export default function PersonalSlide({ slide, isActive }: IPersonalSlideProps) 
   if (!isActive) return null;
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center p-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+    <div className="h-screen flex flex-col justify-center items-center p-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-y-auto custom-scrollbar">
       <div className="max-w-5xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Foto e Informações Pessoais */}

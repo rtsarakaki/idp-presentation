@@ -13,7 +13,7 @@ export default function PresentationSlide({ slide, isActive }: IPresentationSlid
   if (!isActive) return null;
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center p-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+    <div className="h-screen flex flex-col justify-center items-center p-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-y-auto custom-scrollbar">
       <div className="max-w-4xl w-full space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
