@@ -1,23 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Clock,
   AlertTriangle,
   Users,
   TrendingDown,
-  Zap,
   BarChart3,
   Target,
-  ArrowRight,
-  CheckCircle,
-  XCircle,
-  Activity,
-  DollarSign,
   UserPlus,
-  Settings,
-  Shield
+  Settings
 } from 'lucide-react';
 import { IPresentationSlide } from '@/data/presentation-outline';
 
@@ -104,24 +97,24 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
     : painPoints.filter(point => point.category === selectedCategory);
 
   return (
-    <div className="flex flex-col items-center space-y-6 p-6">
+    <div className="flex flex-col items-center space-y-6 p-2">
       {/* Métricas Principais */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full mb-3">
         <div className="bg-white/10 rounded-lg p-3 text-center">
           <div className="text-sm font-bold text-red-400">Tempo</div>
-          <div className="text-[8px] text-gray-300">Significativo perdido</div>
+          <div className="text-[10px] text-gray-300">Significativo perdido</div>
         </div>
         <div className="bg-white/10 rounded-lg p-3 text-center">
           <div className="text-sm font-bold text-orange-400">Processos</div>
-          <div className="text-[8px] text-gray-300">Manuais e lentos</div>
+          <div className="text-[10px] text-gray-300">Manuais e lentos</div>
         </div>
         <div className="bg-white/10 rounded-lg p-3 text-center">
           <div className="text-sm font-bold text-blue-400">Visibilidade</div>
-          <div className="text-[8px] text-gray-300">Limitada</div>
+          <div className="text-[10px] text-gray-300">Limitada</div>
         </div>
         <div className="bg-white/10 rounded-lg p-3 text-center">
           <div className="text-sm font-bold text-purple-400">Onboarding</div>
-          <div className="text-[8px] text-gray-300">Demorado</div>
+          <div className="text-[10px] text-gray-300">Demorado</div>
         </div>
       </div>
 
@@ -133,7 +126,7 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
            </div>
            <div className="text-center">
              <div className="text-sm font-semibold text-white">Tempo Perdido</div>
-             <div className="text-[8px] text-white/70">Significativo</div>
+             <div className="text-[10px] text-white/70">Significativo</div>
            </div>
          </div>
         
@@ -149,7 +142,7 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
           </div>
           <div className="text-center">
             <div className="text-sm font-semibold text-white">Frustração</div>
-            <div className="text-[8px] text-white/70">Devs</div>
+            <div className="text-[10px] text-white/70">Devs</div>
           </div>
         </div>
         
@@ -165,7 +158,7 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
           </div>
           <div className="text-center">
             <div className="text-sm font-semibold text-white">Velocidade</div>
-            <div className="text-[8px] text-white/70">Reduzida</div>
+            <div className="text-[10px] text-white/70">Reduzida</div>
           </div>
         </div>
       </div>
@@ -173,8 +166,8 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
       {/* Problemas Específicos */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
         {filteredPoints.map((point) => (
-          <div key={point.id} className="bg-white/5 rounded-lg p-3 border border-white/10">
-            <div className="flex items-start space-x-3 mb-3">
+                    <div key={point.id} className="bg-white/5 rounded-lg p-3 border border-white/10 flex flex-col h-full">
+            <div className="flex items-start space-x-3 mb-3 flex-1">
               <div className={`w-10 h-10 ${point.color} rounded-full flex items-center justify-center flex-shrink-0`}>
                 {(() => {
                   const IconComponent = point.icon;
@@ -186,10 +179,10 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
                 <div className="text-sm text-gray-300 leading-relaxed">{point.description}</div>
               </div>
             </div>
-                         <div className="flex items-center justify-between">
-               <div className="text-lg font-bold text-red-400">{point.metric}</div>
-               <div className="text-sm text-gray-400">{point.impact}</div>
-             </div>
+                         <div className="flex items-end justify-between mt-auto">
+                <div className="text-[12px] font-bold text-red-400">{point.metric}</div>
+                <div className="text-[12px] text-gray-200">{point.impact}</div>
+               </div>
           </div>
         ))}
       </div>
