@@ -12,9 +12,7 @@ import {
   Eye,
   Database,
   CheckCircle,
-  BarChart3,
-  ArrowRight,
-  ArrowUp
+  BarChart3
 } from 'lucide-react';
 import { IPresentationSlide } from '@/data/presentation-outline';
 

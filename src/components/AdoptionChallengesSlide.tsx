@@ -5,13 +5,8 @@ import {
   AlertTriangle, 
   Users, 
   BookOpen, 
-  MessageSquare, 
   Shield, 
-  BarChart3, 
-  Settings, 
   TrendingUp,
-  CheckCircle,
-  Clock,
   Target,
   Zap
 } from 'lucide-react';

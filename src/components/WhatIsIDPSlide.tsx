@@ -6,14 +6,9 @@ import {
   Layers,
   Zap,
   Users,
-  Shield,
-  Eye,
   Settings,
   Star,
-  Cpu,
-  Database,
-  Globe,
-  Code
+  Cpu
 } from 'lucide-react';
 import { IPresentationSlide } from '@/data/presentation-outline';
 
@@ -66,12 +61,7 @@ const idpConcepts: IIDPConcept[] = [
   }
 ];
 
-const categories = [
-  { id: 'platform', name: 'Plataforma', icon: Layers, color: 'bg-blue-500' },
-  { id: 'automation', name: 'Automação', icon: Zap, color: 'bg-green-500' },
-  { id: 'experience', name: 'Experiência', icon: Users, color: 'bg-purple-500' },
-  { id: 'governance', name: 'Governança', icon: Shield, color: 'bg-red-500' }
-];
+
 
 // Componente de comparação de impacto
 const ImpactComparison = () => {
@@ -135,10 +125,7 @@ const ImpactComparison = () => {
 };
 
 // Diagrama visual da IDP
-const IDPDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
-  const filteredConcepts = selectedCategory === 'all'
-    ? idpConcepts
-    : idpConcepts.filter(concept => concept.category === selectedCategory);
+const IDPDiagram = () => {
 
   return (
     <div className="flex flex-col items-center space-y-6 p-4">
@@ -254,7 +241,7 @@ export default function WhatIsIDPSlide({ slide, isActive }: IWhatIsIDPSlideProps
                 <div>
                   <h4 className="text-lg font-semibold mb-3 text-purple-300">Arquitetura da IDP</h4>
                   <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <IDPDiagram selectedCategory={selectedCategory} />
+                    <IDPDiagram />
                   </div>
                 </div>
 

@@ -8,9 +8,7 @@ import {
   Users,
   TrendingDown,
   BarChart3,
-  Target,
-  UserPlus,
-  Settings
+  UserPlus
 } from 'lucide-react';
 import { IPresentationSlide } from '@/data/presentation-outline';
 
@@ -83,12 +81,7 @@ const painPoints: IPainPoint[] = [
   }
 ];
 
-const categories = [
-  { id: 'time', name: 'Tempo', icon: Clock, color: 'bg-red-500' },
-  { id: 'process', name: 'Processos', icon: Settings, color: 'bg-orange-500' },
-  { id: 'visibility', name: 'Visibilidade', icon: BarChart3, color: 'bg-blue-500' },
-  { id: 'onboarding', name: 'Onboarding', icon: UserPlus, color: 'bg-purple-500' }
-];
+
 
 // Diagrama de impacto visual
 const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {

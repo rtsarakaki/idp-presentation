@@ -1,23 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Zap,
   Shield,
   Eye,
   Settings,
   Users,
-  CheckCircle,
-  Star,
-  ArrowRight,
-  Play,
-  Pause,
-  RotateCcw,
-  Sparkles,
-  Target,
-  Lock,
-  TrendingUp,
   Activity,
   Layers
 } from 'lucide-react';
@@ -128,149 +118,9 @@ const principles: IPrinciple[] = [
   }
 ];
 
-const categories = [
-  { id: 'platform', name: 'Plataforma', icon: Layers, color: 'bg-blue-500' },
-  { id: 'experience', name: 'Experiência', icon: Users, color: 'bg-green-500' },
-  { id: 'engineering', name: 'Engenharia', icon: Zap, color: 'bg-purple-500' },
-  { id: 'governance', name: 'Governança', icon: Shield, color: 'bg-red-500' }
-];
 
-// Componente de Princípio Interativo
-const InteractivePrinciple = ({ principle, isActive, index }: { principle: IPrinciple; isActive: boolean; index: number }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [showExamples, setShowExamples] = useState(false);
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, rotateY: -90 }}
-      animate={{ 
-        opacity: 1, 
-        scale: isActive ? 1 : 0.95,
-        rotateY: isActive ? 0 : -5
-      }}
-      transition={{ 
-        duration: 0.8, 
-        delay: index * 0.2,
-        type: "spring",
-        stiffness: 100
-      }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      className={`relative group cursor-pointer transform transition-all duration-500 ${
-        isActive ? 'z-20' : 'z-10'
-      }`}
-      onClick={() => setShowExamples(!showExamples)}
-    >
-      {/* Card Principal */}
-      <div className={`
-        relative overflow-hidden rounded-xl p-3 border-2 transition-all duration-500
-        ${isActive 
-          ? 'border-white/30 bg-white/15 shadow-2xl shadow-white/10' 
-          : 'border-white/10 bg-white/5'
-        }
-        ${isHovered ? 'scale-105' : 'scale-100'}
-      `}>
-        {/* Background Gradient */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${principle.gradient} opacity-10 transition-opacity duration-500 ${
-          isActive ? 'opacity-25' : 'opacity-10'
-        }`} />
-        
-        {/* Content */}
-        <div className="relative">
-          <div className="flex items-center justify-center mb-2">
-            <motion.div
-              animate={{ 
-                rotate: isActive ? 360 : 0,
-                scale: isHovered ? 1.2 : 1
-              }}
-              transition={{ duration: 0.6 }}
-              className={`w-8 h-8 ${principle.color} rounded-full flex items-center justify-center mr-3`}
-            >
-              {(() => {
-                const IconComponent = principle.icon;
-                return <IconComponent size={16} className="text-white" />;
-              })()}
-            </motion.div>
-            <h3 className={`text-lg font-bold transition-colors duration-300 ${
-              isActive ? 'text-white' : 'text-gray-300'
-            }`}>
-              {principle.title}
-            </h3>
-          </div>
-          <p className={`text-sm leading-relaxed mb-2 transition-colors duration-300 text-center ${
-            isActive ? 'text-gray-200' : 'text-gray-400'
-          }`}>
-            {principle.description}
-          </p>
-          
-          {/* Impact Badge */}
-          <div className={`inline-block px-3 py-1 rounded-full text-sm font-semibold transition-all duration-300 ${
-            isActive 
-              ? 'bg-white/20 text-white border border-white/30' 
-              : 'bg-white/10 text-gray-400'
-          }`}>
-            {principle.impact}
-          </div>
 
-          {/* Objectives Chips */}
-          <div className="flex flex-wrap gap-1 mt-2 justify-center">
-            {principle.objectives.map((objective, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 + idx * 0.1 }}
-                className={`px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
-                  isActive 
-                    ? 'bg-white/15 text-white/90 border border-white/20' 
-                    : 'bg-white/5 text-gray-500'
-                }`}
-              >
-                {objective}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Sparkle Effect */}
-        <AnimatePresence>
-          {isActive && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              className="absolute -top-2 -right-2"
-            >
-              <Sparkles size={24} className="text-yellow-400" />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Examples Popup */}
-      <AnimatePresence>
-        {showExamples && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="absolute top-full left-0 right-0 mt-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 z-30"
-          >
-            <h4 className="text-sm font-semibold text-white mb-3">Exemplos Práticos:</h4>
-            <div className="space-y-2">
-              {principle.examples.map((example, idx) => (
-                <div key={idx} className="flex items-center space-x-2">
-                  <CheckCircle size={14} className="text-green-400 flex-shrink-0" />
-                  <span className="text-xs text-gray-200">{example}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
 
 
 
