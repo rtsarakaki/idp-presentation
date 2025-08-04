@@ -163,7 +163,7 @@ export const presentationOutline: IPresentationOutline = {
               subtitle: "Perguntas e Discussão",
               content: [
                 "Ricardo Tadeu Sinhei Arakaki",
-                "ricardo.arakaki@gmail.com",
+                "rtsarakaki@gmail.com",
                 "linkedin.com/in/ricardo-arakaki",
                 "github.com/rtsarakaki"
               ],
