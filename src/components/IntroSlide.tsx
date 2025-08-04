@@ -53,7 +53,7 @@ export default function IntroSlide({ slide, isActive }: IIntroSlideProps) {
               className="space-y-4"
             >
               {slide.content.map((item, index) => {
-                const colors = ['bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-yellow-400'];
+                const colors = ['bg-blue-400', 'bg-purple-400', 'bg-green-400', 'bg-yellow-400', 'bg-red-400', 'bg-indigo-400'];
                 return (
                   <div key={index} className="flex items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
                     <div className={`w-3 h-3 ${colors[index]} rounded-full`}></div>
