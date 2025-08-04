@@ -25,8 +25,10 @@ export const presentationOutline: IPresentationOutline = {
       subtitle: "Estratégia para Times de Engenharia",
       content: [
         "A Jornada dos Times de Engenharia",
+        "Os Problemas que Enfrentamos",
         "O que é IDP e seus Princípios",
-        "Benefícios: Aceleração, Observabilidade e Governança",
+        "Partes que Compõem uma IDP",
+        "Fluxo de Criação de Componentes",
         "Desafios de Adoção"
       ],
       duration: 3,
