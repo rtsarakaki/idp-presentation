@@ -89,7 +89,6 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
         >
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <h2 className="text-2xl font-semibold text-white mb-6">{slide.content[0]}</h2>
-            <p className="text-lg text-gray-300 mb-6">{slide.content[1]}</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
@@ -99,7 +98,7 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="text-white">{slide.content[2]}</p>
+                    <p className="text-white">{slide.content[1]}</p>
                   </div>
                 </div>
                 
@@ -109,7 +108,7 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">LinkedIn</p>
-                    <p className="text-white">{slide.content[3]}</p>
+                    <p className="text-white">{slide.content[2]}</p>
                   </div>
                 </div>
               </div>
@@ -121,7 +120,7 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">GitHub</p>
-                    <p className="text-white">{slide.content[4]}</p>
+                    <p className="text-white">{slide.content[3]}</p>
                   </div>
                 </div>
                 

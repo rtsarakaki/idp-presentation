@@ -162,8 +162,7 @@ export const presentationOutline: IPresentationOutline = {
               title: "Obrigado!",
               subtitle: "Perguntas e Discussão",
               content: [
-                "Ricardo Tadeu Sinhei Arakaki",
-                "Gerente de Arquitetura de Soluções - Grupo Boticário",
+                "Ricardo Arakaki",
                 "rtsarakaki@gmail.com",
                 "linkedin.com/in/ricardo-arakaki",
                 "github.com/rtsarakaki"
