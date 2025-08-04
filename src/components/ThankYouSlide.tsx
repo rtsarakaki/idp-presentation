@@ -89,7 +89,6 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
         >
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
             <h2 className="text-2xl font-semibold text-white mb-6">{slide.content[0]}</h2>
-            <p className="text-lg text-gray-300 mb-6">{slide.content[1]}</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-4">
