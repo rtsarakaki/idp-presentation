@@ -191,7 +191,7 @@ const ImpactDiagram = ({ selectedCategory }: { selectedCategory: string }) => {
 };
 
 export default function PainPointsSlide({ slide, isActive }: IPainPointsSlideProps) {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory] = useState('all');
 
   if (!isActive) return null;
 
@@ -208,9 +208,6 @@ export default function PainPointsSlide({ slide, isActive }: IPainPointsSlidePro
           <h1 className="text-4xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent mb-6">
             {slide.title}
           </h1>
-          <div className="text-lg text-gray-300 mb-6">
-            {slide.subtitle}
-          </div>
         </motion.div>
 
         <motion.div
@@ -219,49 +216,7 @@ export default function PainPointsSlide({ slide, isActive }: IPainPointsSlidePro
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          {/* Categorias de Problemas */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-6"
-          >
-            <div className="flex items-center justify-center space-x-4 overflow-x-auto pb-4">
-              <button
-                onClick={() => setSelectedCategory('all')}
-                className={`px-6 py-3 rounded-lg transition-all ${
-                  selectedCategory === 'all' 
-                    ? 'bg-white/20 text-white' 
-                    : 'bg-white/10 text-white/70 hover:bg-white/15'
-                }`}
-              >
-                <div className="flex items-center space-x-2">
-                  <Target size={20} />
-                  <span>Todos</span>
-                </div>
-              </button>
-              
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-3 rounded-lg transition-all ${
-                    selectedCategory === category.id 
-                      ? 'bg-white/20 text-white' 
-                      : 'bg-white/10 text-white/70 hover:bg-white/15'
-                  }`}
-                >
-                  <div className="flex items-center space-x-2">
-                    {(() => {
-                      const IconComponent = category.icon;
-                      return <IconComponent size={20} />;
-                    })()}
-                    <span>{category.name}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </motion.div>
+          
 
           {/* Conteúdo Principal */}
           <motion.div
@@ -269,7 +224,7 @@ export default function PainPointsSlide({ slide, isActive }: IPainPointsSlidePro
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 mb-6 max-h-[70vh] overflow-y-auto custom-scrollbar"
+            className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20 mb-6 max-h-[75vh] overflow-y-auto custom-scrollbar"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>

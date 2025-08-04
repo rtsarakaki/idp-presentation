@@ -8,6 +8,12 @@ import PersonalSlide from './PersonalSlide';
 import IntroSlide from './IntroSlide';
 import ContextSlide from './ContextSlide';
 import PainPointsSlide from './PainPointsSlide';
+import WhatIsIDPSlide from './WhatIsIDPSlide';
+import IDPPrinciplesSlide from './IDPPrinciplesSlide';
+import IDPComponentsSlide from './IDPComponentsSlide';
+import ComponentCreationFlowSlide from './ComponentCreationFlowSlide';
+import AdoptionChallengesSlide from './AdoptionChallengesSlide';
+import ThankYouSlide from './ThankYouSlide';
 import SlideTransition from './SlideTransition';
 
 export default function Presentation() {
@@ -103,6 +109,36 @@ export default function Presentation() {
           />
         ) : currentSlide.id === 'pain-points' ? (
           <PainPointsSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'what-is-idp' ? (
+          <WhatIsIDPSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'idp-principles' ? (
+          <IDPPrinciplesSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'idp-components' ? (
+          <IDPComponentsSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'component-creation-flow' ? (
+          <ComponentCreationFlowSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'closing' ? (
+          <AdoptionChallengesSlide
+            slide={currentSlide}
+            isActive={true}
+          />
+        ) : currentSlide.id === 'thank-you' ? (
+          <ThankYouSlide
             slide={currentSlide}
             isActive={true}
           />

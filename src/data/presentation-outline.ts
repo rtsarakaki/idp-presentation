@@ -90,7 +90,6 @@ export const presentationOutline: IPresentationOutline = {
     {
       id: "idp-principles",
       title: "Princípios do IDP",
-      subtitle: "Fundamentos da Plataforma",
       content: [
         "Self-service para desenvolvedores",
         "Padronização e consistência",
@@ -102,74 +101,73 @@ export const presentationOutline: IPresentationOutline = {
       type: "concept"
     },
     {
-      id: "acceleration-benefits",
-      title: "Aceleração do Desenvolvimento",
-      subtitle: "Velocidade e Eficiência",
+      id: "idp-components",
+      title: "Partes que Compõem uma IDP",
+      subtitle: "Arquitetura e Componentes",
       content: [
-        "Setup de projeto em minutos, não dias",
-        "Templates padronizados e reutilizáveis",
-        "Self-service para recursos de infraestrutura",
-        "Redução de 70-80% no tempo de configuração",
-        "Foco no código de negócio, não em infraestrutura"
+        "Interface do Desenvolvedor (Dev Portal)",
+        "Catálogo de Componentes",
+        "Gerenciador de Templates",
+        "Pipeline de CI/CD Automatizado",
+        "Provisionamento de Infraestrutura (IaC)",
+        "Gestão de Segredos e Acessos",
+        "Monitoramento e Observabilidade",
+        "Catálogo de Serviços (Service Catalog)",
+        "Políticas e Compliance",
+        "Sistema de Feedback e Métricas",
+        "TechDocs e Documentação",
+        "Detecção de Vazamento de Secrets"
+      ],
+      duration: 10,
+      type: "concept"
+    },
+    {
+      id: "component-creation-flow",
+      title: "Fluxo de Criação de um Componente na Plataforma Backstage",
+      subtitle: "Do Código à Produção em Minutos",
+      content: [
+        "Abertura da Plataforma (Portal do Desenvolvedor)",
+        "Escolha de um Template",
+        "Preenchimento de Informações",
+        "Geração Automatizada (por Scaffolder)",
+        "Provisionamento de Infraestrutura",
+        "Habilitação de Observabilidade e Segurança",
+        "Deploy Automatizado",
+        "Registro e Visualização no Backstage"
       ],
       duration: 8,
-      type: "benefits"
-    },
-    {
-      id: "observability-benefits",
-      title: "Observabilidade e Métricas",
-      subtitle: "Visibilidade Total",
-      content: [
-        "Dashboards automáticos com baselines",
-        "Métricas DORA em tempo real",
-        "Indicadores por produto, time, gerência",
-        "Alertas proativos e inteligentes",
-        "Relatórios executivos automáticos"
-      ],
-      duration: 7,
-      type: "benefits"
-    },
-    {
-      id: "governance-benefits",
-      title: "Governança e Controle",
-      subtitle: "Compliance Automatizado",
-      content: [
-        "Catalogação automática de componentes",
-        "Tagueamento inteligente de recursos",
-        "Rastreamento de custos por múltiplas dimensões",
-        "Políticas de segurança centralizadas",
-        "Auditoria e compliance automáticos"
-      ],
-      duration: 7,
-      type: "benefits"
-    },
-    {
-      id: "implementation-approach",
-      title: "Abordagem de Implementação",
-      subtitle: "Como Começar",
-      content: [
-        "Começar pequeno, crescer organicamente",
-        "Identificar processos mais críticos",
-        "Engajar times early adopters",
-        "Medir e iterar continuamente",
-        "Cultura de melhoria contínua"
-      ],
-      duration: 6,
-      type: "implementation"
+      type: "concept"
     },
     {
       id: "closing",
       title: "Desafios de Adoção",
-      subtitle: "Lições Aprendidas",
+      subtitle: "Lições Aprendidas e Estratégias de Sucesso",
       content: [
-        "Resistência à mudança de processos",
-        "Curva de aprendizado inicial",
-        "Necessidade de evangelização contínua",
-        "Importância do suporte executivo",
-        "Medição e demonstração de valor"
+        "Resistência à mudança de processos e cultura",
+        "Curva de aprendizado inicial e treinamento - criação de ferramentas de onboarding e onboarding guiado na plataforma",
+        "Necessidade de evangelização contínua e comunicação",
+        "Importância do suporte executivo e alinhamento estratégico",
+        "Medição e demonstração de valor e ROI",
+        "Integração com ferramentas existentes e legacy",
+        "Escalabilidade da plataforma e performance",
+        "Governança e compliance em ambientes regulamentados"
       ],
-      duration: 5,
+      duration: 8,
       type: "closing"
-    }
+    },
+                {
+              id: "thank-you",
+              title: "Obrigado!",
+              subtitle: "Perguntas e Discussão",
+              content: [
+                "Ricardo Tadeu Sinhei Arakaki",
+                "Gerente de Arquitetura de Soluções - Grupo Boticário",
+                "rtsarakaki@gmail.com",
+                "linkedin.com/in/ricardo-arakaki",
+                "github.com/rtsarakaki"
+              ],
+              duration: 3,
+              type: "closing"
+            }
   ]
 }; 
