@@ -99,7 +99,7 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="text-white">{slide.content[2]}</p>
+                    <p className="text-white">{slide.content[1]}</p>
                   </div>
                 </div>
                 
@@ -109,7 +109,7 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">LinkedIn</p>
-                    <p className="text-white">{slide.content[3]}</p>
+                    <p className="text-white">{slide.content[2]}</p>
                   </div>
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function ThankYouSlide({ slide, isActive }: IThankYouSlideProps) 
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">GitHub</p>
-                    <p className="text-white">{slide.content[4]}</p>
+                    <p className="text-white">{slide.content[3]}</p>
                   </div>
                 </div>
                 
