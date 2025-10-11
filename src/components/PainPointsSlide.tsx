@@ -219,42 +219,10 @@ export default function PainPointsSlide({ slide, isActive }: IPainPointsSlidePro
             transition={{ duration: 0.5 }}
             className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20 mb-6 max-h-[75vh] overflow-y-auto custom-scrollbar"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="w-full">
               <div>
-                                  <h4 className="text-lg font-semibold mb-3 text-red-300">Problemas Identificados</h4>
-                  <div className="space-y-3">
-                  {painPoints
-                    .filter(point => selectedCategory === 'all' || point.category === selectedCategory)
-                    .map((point, index) => (
-                      <motion.div
-                        key={point.id}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex items-start space-x-3 p-4 bg-white/5 rounded-lg border border-white/10"
-                      >
-                        <div className={`w-8 h-8 ${point.color} rounded-full flex items-center justify-center flex-shrink-0`}>
-                          {(() => {
-                            const IconComponent = point.icon;
-                            return <IconComponent size={16} className="text-white" />;
-                          })()}
-                        </div>
-                                                 <div className="flex-1 min-w-0">
-                           <div className="font-semibold text-white mb-1">{point.title}</div>
-                           <div className="text-sm text-gray-300 mb-2 leading-relaxed">{point.description}</div>
-                           <div className="flex items-center justify-between">
-                                                           <div className="text-[10px] font-bold text-red-400">{point.metric}</div>
-                              <div className="text-[7px] text-gray-400">{point.impact}</div>
-                           </div>
-                         </div>
-                      </motion.div>
-                    ))}
-                </div>
-              </div>
-
-                              <div>
-                  <h4 className="text-lg font-semibold mb-3 text-orange-300">Impacto Visual</h4>
-                  <div className="bg-white/5 rounded-lg p-2 border border-white/10">
+                <h4 className="text-lg font-semibold mb-3 text-red-300">Problemas Identificados</h4>
+                <div className="bg-white/5 rounded-lg p-2 border border-white/10">
                   <ImpactDiagram selectedCategory={selectedCategory} />
                 </div>
               </div>
