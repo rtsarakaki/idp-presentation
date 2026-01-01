@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: idp-presentation
+  annotations:
+    github.com/project-slug: rtsarakaki/idp-presentation
+spec:
+  type: other
+  lifecycle: unknown
+  owner: developers
