@@ -3,8 +3,10 @@ kind: Component
 metadata:
   name: idp-presentation
   annotations:
+    custom.backstage.io/component-id: "5012663f7937908f089f72d65157d3aac3c81a916947c6c3ec11c31848cac31e"
     github.com/project-slug: rtsarakaki/idp-presentation
 spec:
-  type: other
-  lifecycle: unknown
+  system: portfolio
+  type: website
+  lifecycle: production
   owner: developers
